@@ -95,8 +95,8 @@ const Game = () => {
 
     const onTapCard = () => {
         console.log('tapped')
-        // const randCard = _.shuffle(card)[0]
-        const randCard = card[0]
+        const randCard = _.shuffle(card)[0]
+        // const randCard = card[0]
         if(!randCard) {
             setDraggable(false)
             setRandomCard({})
@@ -207,13 +207,13 @@ const Game = () => {
                         <div>{randomCard?.name}</div>
 
                         <div className='card-icon'>
-                            { randomCard?.type === 'diamond' ? <ImDiamonds /> : randomCard.type === 'heart' ? <BsFillSuitHeartFill /> : ''  }
+                            { randomCard?.type === 'diamond' ? <ImDiamonds color='red' /> : randomCard.type === 'heart' ? <BsFillSuitHeartFill color='red' /> : ''  }
                         </div>
                     </div>
 
                     <div className='card-body'>
                         <div className='card-body-icon'>
-                            { randomCard?.type === 'diamond' ? <ImDiamonds size={60} /> : randomCard.type === 'heart' ? <BsFillSuitHeartFill size={60} /> : '' }
+                            { randomCard?.type === 'diamond' ? <ImDiamonds color='red' size={60} /> : randomCard.type === 'heart' ? <BsFillSuitHeartFill color='red' size={60} /> : '' }
                         </div>
                     </div>
 

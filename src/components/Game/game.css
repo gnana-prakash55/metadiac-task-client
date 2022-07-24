@@ -63,6 +63,7 @@
 
 .card-head {
     display: flex;
+    color: red;
 }
 
 .card-body {

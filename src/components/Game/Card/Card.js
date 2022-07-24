@@ -9,13 +9,13 @@ const Card = ({ _id, name, type }) => {
                 <div>{name}</div>
 
                 <div className='card-icon'>
-                    { type === 'diamond' ? <ImDiamonds /> : <BsFillSuitHeartFill />  }
+                    { type === 'diamond' ? <ImDiamonds color='red' /> : <BsFillSuitHeartFill color='red' />  }
                 </div>
             </div>
 
             <div className='card-body'>
                 <div className='card-body-icon'>
-                    { type === 'diamond' ? <ImDiamonds size={60} /> : <BsFillSuitHeartFill size={60} />  }
+                    { type === 'diamond' ? <ImDiamonds color='red' size={60} /> : <BsFillSuitHeartFill color='red' size={60} />  }
                 </div>
             </div>
 
