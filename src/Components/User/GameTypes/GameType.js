@@ -21,6 +21,16 @@ const GameType = ({ handleGame }) => {
         })
     }
 
+    const handleDelete = (gameTypeId) => {
+        const deleteGameType = {
+            gameTypeId
+        }
+        AppService.deleteGameType(deleteGameType).then(res => {
+            console.log(res.data)
+            getGameTypes()
+        })
+    }
+
     useEffect(() => {
 
         AppService.checkAuthStatus().then(res => {
@@ -68,7 +78,7 @@ const GameType = ({ handleGame }) => {
                     <div className="game-type-sub">
                         {
                             gameTypes.map(type => (
-                                <GameTypeCard handleGame={handleGame} type={type} />   
+                                <GameTypeCard handleGame={handleGame} type={type} handleDelete={handleDelete} role={role} />   
                             ))
                         }
                     </div>

@@ -138,7 +138,15 @@ class AppService {
                "Authorization": token
           }
        })
+   }
 
+   deleteGameType(payload) {
+     const token = localStorage.getItem('access_token')
+       return axios.delete(base_url + '/admin/gameTypes/'+ payload.gameTypeId , {
+          headers: {
+               "Authorization": token
+          }
+       })
    }
 
 

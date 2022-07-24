@@ -104,11 +104,11 @@ const Game = () => {
         else setRandomCard(randCard)
     }
 
-    const dragStarted = (e, id) => {
+    const dragStart = (e, id) => {
         e.dataTransfer.setData("randCard", id)
     }
 
-    const draggingOver = (e) => {
+    const dragOver = (e) => {
         e.preventDefault()
     }
 
@@ -201,7 +201,7 @@ const Game = () => {
                     <CgCardClubs size={200} />
                 </div>
 
-                <div className="game-shuffle-card" draggable={draggable} onDragStart={(e) => dragStarted(e, randomCard._id)}>
+                <div className="game-shuffle-card" draggable={draggable} onDragStart={(e) => dragStart(e, randomCard._id)}>
 
                     <div className='card-head'>
                         <div>{randomCard?.name}</div>
@@ -223,7 +223,7 @@ const Game = () => {
 
             <div className='panel-container'>
 
-                <div className='panel-heart' droppable onDragOver={(e) => draggingOver(e)} onDrop={(e) => dragHeartDropped(e)}>
+                <div className='panel-heart' droppable onDragOver={(e) => dragOver(e)} onDrop={(e) => dragHeartDropped(e)}>
                     {
                         currentHeart ? 
                             <Card key={currentHeart._id} _id={currentHeart._id} name={currentHeart.name} type={currentHeart.type} />
@@ -232,7 +232,7 @@ const Game = () => {
                     }
                 </div>
 
-                <div className='panel-diamond' droppable onDragOver={(e) => draggingOver(e)} onDrop={(e) => dragDiamondDropped(e)}>
+                <div className='panel-diamond' droppable onDragOver={(e) => dragOver(e)} onDrop={(e) => dragDiamondDropped(e)}>
                     {
                         currentDiamond ? 
                             <Card key={currentDiamond._id} _id={currentDiamond._id} name={currentDiamond.name} type={currentDiamond.type} />

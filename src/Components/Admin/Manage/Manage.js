@@ -85,18 +85,30 @@ const Manage = () => {
                 <div>
                 <h4 className="page-text">Manage</h4>
                 <div className="input-manage-panel">
-                    <Text>First Time Level</Text>
+                    <Text><b>First Time Level</b></Text>
+                    <hr/>
+                    <br/>
+                    <Text><b>Interval</b></Text>
                     <Input className="manage-input" placeholder='Interval' value={firstTimeLevel} onChange={e => setFirstTimeLevel(e.target.value)} />
+                    <Text><b>Percentage</b></Text>
                     <Input className="manage-input" placeholder='Percentage' value={firstPercentage} onChange={e => setFirstPercentage(e.target.value)} />
                 </div>
                 <div className="input-manage-panel">
-                    <Text>Second Time Level</Text>
+                    <Text><b>Second Time Level</b></Text>
+                    <hr/>
+                    <br/>
+                    <Text><b>Interval</b></Text>
                     <Input className="manage-input" placeholder='Interval' value={secondTimeLevel} onChange={e => setSecondTimeLevel(e.target.value)} />
+                    <Text><b>Percentage</b></Text>
                     <Input className="manage-input" placeholder='Percentage' value={secondPercentage} onChange={e => setSecondPercentage(e.target.value)} />
                 </div>
                 <div className="input-manage-panel">
-                    <Text>Third Time Level</Text>
+                    <Text><b>Third Time Level</b></Text>
+                    <hr/>
+                    <br/>
+                    <Text><b>Interval</b></Text>
                     <Input className="manage-input" placeholder='Interval' value={thirdTimeLevel} onChange={e => setThirdTimeLevel(e.target.value)} />
+                    <Text><b>Percentage</b></Text>
                     <Input className="manage-input" placeholder='Percentage' value={thirdPercentage} onChange={e => setThirdPercentage(e.target.value)} />
                 </div>
                 <div className="input-manage-panel">
