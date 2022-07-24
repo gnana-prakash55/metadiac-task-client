@@ -1,0 +1,11 @@
+.score-board-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.score-container {
+    width: 60%;
+    text-align: left;
+    cursor: pointer;
+}

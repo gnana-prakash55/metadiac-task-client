@@ -1,0 +1,27 @@
+.wallet-container {
+    display: inline;
+    text-align: center;
+}
+
+.balance-text {
+    font-size: 40px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    color: gray;
+}
+
+.page-text {
+    font-size: 60px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    color: rgb(86, 182, 182);
+    margin: 20px;
+    text-align: center;
+}
+
+.amount {
+    font-size: 100px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    color: black;
+}

@@ -1,0 +1,89 @@
+.heading {
+    text-align: center;
+    font-size: larger;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-tap-card {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    height: 200px;
+    width: 150px;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-shuffle-card {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    height: 200px;
+    width: 150px;
+    margin: 10px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.panel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.panel-heart, .panel-diamond {
+    height: 250px;
+    width: 200px;
+    padding: 10px;
+    margin: 10px;
+    /* overflow: auto; */
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.card-container {
+    margin: 10px;
+    height: 200px;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: 150px;
+    background-color: rgb(197, 193, 193);
+}
+
+.card-icon {
+    width: 100%;
+    justify-content: right;
+    display: flex;
+}
+
+.card-head {
+    display: flex;
+}
+
+.card-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+}
+
+.timmer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gametype-btn {
+    margin: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.add-game-type {
+    margin: 10px;
+}

@@ -1,0 +1,18 @@
+.score-card-container {
+    margin: 10px;
+}
+
+.scoreboard-list {
+    margin: 10px;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scoreboard-list div {
+    margin-right: 10px;
+    margin-left: 10px;
+}

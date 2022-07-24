@@ -1,0 +1,9 @@
+.user-list-btn {
+    margin: 10px;
+}
+
+.user-list-name {
+    width: 100%;
+    font-size: large;
+    font-weight: bold;
+}
