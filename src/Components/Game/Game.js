@@ -100,8 +100,8 @@ const Game = ({ gameType }) => {
 
     const onTapCard = () => {
         console.log('tapped')
-        // const randCard = _.shuffle(card)[0]
-        const randCard = card[0]
+        const randCard = _.shuffle(card)[0]
+        // const randCard = card[0]
         if(!randCard) {
             setDraggable(false)
             setRandomCard({})

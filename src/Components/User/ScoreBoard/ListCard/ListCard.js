@@ -12,7 +12,7 @@ const ListCard = ({ score, index }) => {
                     <b>Name:</b> {score.name}
                 </div>
                 <div>
-                    <b>TimeElapsed:</b> {score.timeElapsed}s
+                    <b>AmountWon:</b> {score.amountWon}
                 </div>
            </div>
 
