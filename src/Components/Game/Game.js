@@ -8,6 +8,7 @@ import { CgCardClubs } from 'react-icons/cg'
 import { Button, useDisclosure, useToast } from '@chakra-ui/react'
 import AppService from '../../Service/ApiService'
 import DialogBox from './Dialog/DialogBox'
+import { useNavigate } from 'react-router-dom'
 
 const Game = ({ gameType }) => {
 
@@ -55,6 +56,7 @@ const Game = ({ gameType }) => {
     const [loading, setLoading]= useState(true)
 
     const toast = useToast()
+    const navigate = useNavigate()
 
     
     const handleStart = () => {
@@ -174,7 +176,7 @@ const Game = ({ gameType }) => {
 
     return (
         <div>
-            <h4 className='heading'>Solitaire</h4>
+            <div className="page-text">Solitaire</div>
 
             <div className='timmer'>
                 <div>

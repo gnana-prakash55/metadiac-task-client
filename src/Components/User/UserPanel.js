@@ -68,7 +68,7 @@ const UserPanel = () => {
                     
 
                     { com === 'wallet' ? <Wallet />
-                        : com === 'gametype' ? <GameType handleGame={handleGame} /> 
+                        : com === 'gametype' ? <GameType /> 
                         : com === 'scoreboard' ? <ScoreBoard /> : <Wallet />
                     }
 

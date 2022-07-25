@@ -17,7 +17,6 @@ function App() {
         <Route path='/' element= {<Signin/>} />
         <Route path='/admin' element= {<AdminPanel/>} />
         <Route path='/user' element= {<UserPanel/>} />
-        <Route path='/user/game' element= {<Game/>} />
       </Routes>
     </BrowserRouter>
 

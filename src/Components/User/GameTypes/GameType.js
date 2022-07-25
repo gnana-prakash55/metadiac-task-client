@@ -16,6 +16,16 @@ const GameType = ({ handleGame }) => {
 
     const toast = useToast()
 
+    useEffect(() => {
+
+        AppService.checkAuthStatus().then(res => {
+            setRole(res.data.role)
+        })
+
+        getGameTypes()
+
+    },[])
+
     const getGameTypes = () => {
         AppService.listGameTypes().then(res => {
             console.log(res.data)
@@ -56,16 +66,6 @@ const GameType = ({ handleGame }) => {
         })
     }
 
-    useEffect(() => {
-
-        AppService.checkAuthStatus().then(res => {
-            setRole(res.data.role)
-        })
-
-        getGameTypes()
-
-    },[])
-
 
     return (
         <div>
@@ -76,20 +76,11 @@ const GameType = ({ handleGame }) => {
                     <div className="game-type-sub">
                         {
                             gameTypes.map(type => (
-                                <GameTypeCard handleGame={handleGame} type={type} handleDelete={handleDelete} role={role} 
+                                <GameTypeCard type={type} handleDelete={handleDelete} role={role} 
                                     handleGameOpen={handleGameOpen} getGameTypes={getGameTypes}/>   
                             ))
                         }
                     </div>
-                    {/* {
-                        role === 'admin' ?
-                        <div className="gametype-btn">
-                            <Input className="add-game-type" placeholder="Game Type" value={gameType} onChange={e => setGameType(e.target.value)}/>
-                            <Input className="add-game-type" type="number" placeholder="Price" value={price} onChange={e => setPrice(e.target.value)}/>
-                            <Button colorScheme="teal" onClick={handleSubmit}>Add GameType</Button>
-                        </div>: ''
-                    } */}
-                    
                 </div>
             </div>: <Game gameType={gameTypeId}/> }
 

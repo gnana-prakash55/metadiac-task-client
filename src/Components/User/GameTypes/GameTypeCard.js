@@ -1,17 +1,22 @@
 import { Button, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Text, useDisclosure, useToast } from "@chakra-ui/react"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { CgCardClubs } from "react-icons/cg"
 import Game from "../../Game/Game"
 import '../UserPanel.css'
 import AppService from "../../../Service/ApiService"
 
-const GameTypeCard = ({ type, handleDelete, role, handleGameOpen, getGameTypes }) => {
+const GameTypeCard = ({ type, role, handleGameOpen, getGameTypes }) => {
 
     const { isOpen, onOpen, onClose } = useDisclosure()
     const [gameType, setGameType] = useState('')
     const [price, setPrice] = useState('')
 
     const toast = useToast()
+
+    useEffect(() => {
+        setGameType(type.name)
+        setPrice(type.price)
+    },[])
 
     const handleSubmit = (gameTypeId) => {
         const gameTypepayload = {
@@ -51,14 +56,9 @@ const GameTypeCard = ({ type, handleDelete, role, handleGameOpen, getGameTypes }
             <CgCardClubs size={200} />
             <p>{type.name}</p>
             <p>Price: {type.price}</p>
-            {
-                role === 'admin' ? 
-                <Button className="game-type-card-btn" color="red" onClick={() => handleDelete(type._id)}>Delete</Button>
-                :''
-            }
              {
                 role === 'admin' ? 
-                <Button colorScheme="teal" onClick={onOpen}>Update</Button>
+                <Button className="game-type-card-btn" colorScheme="teal" onClick={onOpen}>Update</Button>
                 :''
             }
 
@@ -68,7 +68,9 @@ const GameTypeCard = ({ type, handleDelete, role, handleGameOpen, getGameTypes }
                     <ModalHeader>Change Price amount</ModalHeader>
                     <ModalCloseButton />
                     <ModalBody>
+                        <Text><b>GameType</b></Text>
                        <Input placeholder="GameType" value={gameType} onChange={e => setGameType(e.target.value)} />
+                       <Text><b>Price</b></Text>
                        <Input placeholder="Price" value={price} onChange={e => setPrice(e.target.value)}/>
                     </ModalBody>
 
