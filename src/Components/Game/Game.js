@@ -9,7 +9,7 @@ import { Button, useDisclosure, useToast } from '@chakra-ui/react'
 import AppService from '../../Service/ApiService'
 import DialogBox from './Dialog/DialogBox'
 
-const Game = () => {
+const Game = ({ gameType }) => {
 
     const [card, setCard] = useState([
         { _id: 1, name: 'A', type: 'diamond' },
@@ -78,10 +78,13 @@ const Game = () => {
 
         setTimeElapsed(secs_between_dates)
 
+        console.log(gameType)
+
         const saveGamePayload = {
             startTime,
             endTime: time ,
-            timeElapsed: secs_between_dates
+            timeElapsed: secs_between_dates,
+            gameType
         }
 
         AppService.saveGame(saveGamePayload).then(res => {
@@ -95,8 +98,8 @@ const Game = () => {
 
     const onTapCard = () => {
         console.log('tapped')
-        const randCard = _.shuffle(card)[0]
-        // const randCard = card[0]
+        // const randCard = _.shuffle(card)[0]
+        const randCard = card[0]
         if(!randCard) {
             setDraggable(false)
             setRandomCard({})
@@ -157,23 +160,9 @@ const Game = () => {
     }
 
     const handleStartGame = async () => {
-        
-        try {
-            const result = await AppService.walletAvailable()    
-            setDraggable(true)
-            handleStart()
-        } catch (error) {
-            console.log(error)
-            if(error.response.status === 300) {
-                return toast({
-                    title: error.response.data.message,
-                    status: 'error',
-                    duration: 9000,
-                    isClosable: true,
-                  })
-            }
-        }
 
+        setDraggable(true)
+        handleStart()
        
     }
 

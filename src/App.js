@@ -5,6 +5,7 @@ import Signup from './Components/Signup/Signup';
 import Signin from './Components/Signin/Signin';
 import AdminPanel from './Components/Admin/AdminPanel';
 import UserPanel from './Components/User/UserPanel';
+import Game from './Components/Game/Game';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path='/' element= {<Signin/>} />
         <Route path='/admin' element= {<AdminPanel/>} />
         <Route path='/user' element= {<UserPanel/>} />
+        <Route path='/user/game' element= {<Game/>} />
       </Routes>
     </BrowserRouter>
 

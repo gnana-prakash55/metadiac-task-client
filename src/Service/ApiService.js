@@ -111,9 +111,9 @@ class AppService {
 
    }
 
-   walletAvailable() {
+   walletAvailable(payload) {
      const token = localStorage.getItem('access_token')
-       return axios.get(base_url + '/user/wallet/available', {
+       return axios.get(base_url + '/user/wallet/available/'+payload.gameTypeId, {
           headers: {
                "Authorization": token
           }
